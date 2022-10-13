@@ -3,6 +3,12 @@ package honux.calender;
 import java.util.Scanner;
 
 public class Calendar {
+	static int[]maxDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
+	public static void print(int month) {
+		System.out.printf("%d월은 %d일까지 있습니다.", month, maxDays[month - 1]);
+	}
+	
 	public static void main(String[] args) {
 		System.out.println(" 일 월 화 수 목 금 토"); 
 		System.out.println("----------------");
@@ -17,8 +23,6 @@ public class Calendar {
 		int month = scanner.nextInt();
 		scanner.close();
 		
-	    //배열 이용하기 
-		int[]maxDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-		System.out.printf("%d월은 %d일까지 있습니다.", month, maxDays[month - 1]);
+		print(month);
 	}
 }
