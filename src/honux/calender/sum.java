@@ -15,7 +15,7 @@ public class sum {
 		b = Integer.parseInt(s2);
 
 		System.out.println(a + ", " + b);
-		System.out.println("두 수의 합은 " + (a + b) + "입니다.");
+		System.out.printf("%d와 %d의 합은 %d입니다.", a, b, a+b);
 
 		scanner.close();
 
