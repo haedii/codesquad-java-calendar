@@ -18,17 +18,33 @@ public class Calendar {
 		System.out.println("22 23 24 25 25 27 28");
 	}
 
+	public int numberOfDaysinEachMonth(int month) {
+		switch (month) {
+		case 2:
+			return 28;
+		default:
+			return 31;
+		}
+	}
+
 	public static void main(String[] args) {
 
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
 		Scanner scanner = new Scanner(System.in);
 		Calendar cal = new Calendar();
 
-		System.out.print("달을 입력하세요. : ");
-		int month = scanner.nextInt();
+		System.out.print("반복횟수를 입력하세요. : ");
+		int iterations = scanner.nextInt();
+		int[] array = new int[iterations];
+
+		for (int i = 0; i < iterations; i++) {
+			array[i] = scanner.nextInt();
+		}
+		for (int i = 0; i < iterations; i++) {
+			System.out.printf("%d월은 %d일까지 있습니다.\n", array[i], cal.numberOfDaysinEachMonth(array[i]));
+		}
+		
 		scanner.close();
 
-		System.out.printf("%d월은 %d일까지 있습니다.", month, cal.getMaxDaysOfMonth(month));
-		
 	}
 }
