@@ -33,16 +33,15 @@ public class Calendar {
 			Calendar cal = new Calendar();
 	    
 			System.out.print("반복횟수를 입력하세요. : ");
-			int iterations = scanner.nextInt();
-			int[] array = new int[iterations];
+			int repeat = scanner.nextInt();
 
-			System.out.println("월을 입력하세요. : ");
-			for (int i = 0; i < iterations; i++) {
-				array[i] = scanner.nextInt();
+			for (int i = 0; i < repeat; i++) {
+				System.out.print("월을 입력하세요. : ");
+				int month = scanner.nextInt();
+				System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.numberOfDaysinEachMonth(month));
 			}
-			for (int i = 0; i < iterations; i++) {
-				System.out.printf("%d월은 %d일까지 있습니다.\n", array[i], cal.numberOfDaysinEachMonth(array[i]));
-			}
+			
+			System.out.println("end.");
 			
 			scanner.close();
 
