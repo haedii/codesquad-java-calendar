@@ -29,21 +29,24 @@ public class Calendar {
 
 	public static void main(String[] args) {
 
-			Scanner scanner = new Scanner(System.in);
-			Calendar cal = new Calendar();
-	    
-			System.out.print("반복횟수를 입력하세요. : ");
-			int repeat = scanner.nextInt();
+		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
+		Scanner scanner = new Scanner(System.in);
+		Calendar cal = new Calendar();
 
-			for (int i = 0; i < repeat; i++) {
-				System.out.print("월을 입력하세요. : ");
-				int month = scanner.nextInt();
+		while (true) {
+			System.out.printf("월을 입력하세요.\n> ");
+			int month = scanner.nextInt();
+			if (month != -1) {
 				System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.numberOfDaysinEachMonth(month));
+				System.out.println();
+			} else {
+				System.out.println("end.");
+				break;
 			}
-			
-			System.out.println("end.");
-			
-			scanner.close();
 
 		}
+
+		scanner.close();
+
+	}
 }
